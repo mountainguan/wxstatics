@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  基于微信web版接口实现的联系人简单信息统计插件
 // @author       mountainguan
-// @match        https://wx.qq.com/
+// @match        https://wx.qq.com/*
 // @grant        GM_addStyle
 // @require      http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js
 // ==/UserScript==
@@ -23,6 +23,9 @@ $("body").append(container);//初始化echart图表容器
 (function() {
     'use strict';
     getData();
+    if(global_data){
+        setTimeout("location.reload();",10000);
+    }
     $('#statusBtn').click(function(){
         generateSexChart(global_data);
         generateProvinceChart(global_data);
