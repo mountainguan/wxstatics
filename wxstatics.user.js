@@ -23,7 +23,7 @@ $("body").append(container);//初始化echart图表容器
 (function() {
     'use strict';
     getData();
-    if(global_data){
+    if(global_data.length !== 0){
         setTimeout("location.reload();",10000);
     }
     $('#statusBtn').click(function(){
